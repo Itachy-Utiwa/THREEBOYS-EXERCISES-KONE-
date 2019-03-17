@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <title>Combat</title>
+</head>
+<body style="background-color:papayawhip">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="col-md-10 col-md-offset">
+                <div class="row">
+                        <fieldset style="background-color:white; border-radius:15px; margin-top: 10%; padding: 90px; border: 2px dashed orangered;width: 2000px; height: 800px;">
+                            <h1 style="text-align: center;color: teal">MEDIVAL FIGHT</h1>
+                            <br>  
+                          <div style="color:white;border-radius: 5px;padding: 20px; background-color:coral; text-align: center" id="sortie"></div>
+                                <div class="col-6">
+                                        <label for="joueur1" id="j1" style="color:black;"></label><br>
+                                        <img id="joueur1" src="joueur1.jpg" alt="Joueur 1" style="width:100%; height:100%;"> 
+                                        
+                                </div>
+                                 <div class="col-6">
+                                        <label for="joueur2" id="j2" style="color:red"></label>
+                                        <img id="joueur2" style="width:65%; height:65%;" src="joueur2.jpg" alt="Joueur 2">
+                                 </div> <br>
+                                 
+                        </fieldset>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        //Selection des deux joueurs
+    var joueur1= document.getElementById('joueur1');
+    var j1= document.getElementById('j1');
+    var j2= document.getElementById('j2');
+    var sortie = document.getElementById('sortie')
+
+ 
+class Joueur {
+  constructor(nom, nombre)  {
+    this.nom=nom ;
+    this.nombre=nombre ;
+  }
+  
+  
+}
+let player1 = new Joueur() ;
+let player2 = new Joueur() ;
+
+
+joueur1.onclick = function j(joueur1)
+{
+  player1.nom=prompt('Entrez le nom du joueur 1');
+  player1.nombre=prompt('Entrez un nombre pour ce joueur 1'); 
+  j1.innerHTML = player1.nom+'<br>'+player1.nombre
+}
+
+joueur2.onclick = function j(joueur2)
+{
+  player2.nom=prompt('Entrez le nom du joueur 2');
+  player2.nombre=prompt('Entrez un nombre pour ce joueur 2'); 
+  j2.innerHTML = player2.nom+'<br>'+player2.nombre
+  
+  
+  if(player1.nombre>player2.nombre){
+  sortie.innerHTML="Bravo "+ player1.nom +", vous êtes l'heureux gagnant de cette partie."
+  
+  }
+  else
+  {
+    sortie.innerHTML=" Bravo "+ player2.nom +", vous êtes l'heureux gagnant de cette partie."
+  }
+}
+
+
+   
+    </script>
+
+
+</body>
+</html>

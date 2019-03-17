@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nombre Magique</title>
+</head>
+<body>
+       <fieldset style="background-color:teal;height: 600px; border:10px dashed orange; border-radius:10px; margin-left:40px; margin-top:5%;">
+        <p style="color:white; text-align:center;font-size:50px">NOMBRE MAGIQUE</p> 
+        <br> <br> <br>  
+        <h1 style="text-align:center;font-size:40px; color:yellow" id="sortie"></h1>
+
+        <br>
+        <button style="margin-left:40%" id="btn">Commencer</button>
+        <script>
+            var sortie= document.getElementById('sortie')
+            var btn = document.getElementById('btn');
+            
+            btn.onclick = function commencer(commencer)
+            {
+                  btn.innerHTML= 'Réssayez';
+                        var nombreChoix= prompt('Entrez le nombre de votre choix compris entre 0 et 100');       
+                          
+
+             //
+
+             function entierAleatoire(nombre1, nombre2)
+        {
+          return Math.floor(Math.random()*(nombre2-nombre1))+nombre1
+        }
+        var nombre= entierAleatoire(0,100);
+        
+        
+           
+        if(nombre<nombreChoix)
+        {
+            sortie.innerHTML='Désolé, le nombre entré est trop petit. Vueillez reéssayer!';
+            
+        }
+        else if(nombre==nombreChoix)
+        {
+            sortie.innerHTML='Félicitation, vous avez gagné!';
+        }
+    
+        else
+        {
+            sortie.innerHTML='Désolé, le nombre entré est trop petit. Vueillez reéssayer!';
+
+        }
+        if(nombreChoix>100)
+        {
+            sortie.innerHTML='Entrez entre nombre valide(entre 0 et 100)';
+        }
+        
+            }
+                        
+                        
+        
+        </script>
+       </fieldset>
+</body>
+</html>
